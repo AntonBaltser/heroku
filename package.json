@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.13.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "server_node",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonBaltser/server_node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntonBaltser/server_node/issues"
+  },
+  "homepage": "https://github.com/AntonBaltser/server_node#readme"
+}
