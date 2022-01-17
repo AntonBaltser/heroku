@@ -16,7 +16,7 @@ let server = app.listen(4000, () =>{
         console.log("Сервер рабтает по адрессу http://%s:%s", host, port)
 })
 
-app.post('/login', (req, res) => {
+app.get('/', (req, res) => {
         res.send('hello word')
 
         console.log(req.body)
