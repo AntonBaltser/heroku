@@ -8,10 +8,6 @@ module.exports = function (sequelize){
             primaryKey: true,
             allowNull: false
         },
-        // user_avatar: {
-        //     type: Sequilize.BLOB,
-        //     allowNull: false
-        // },
         file_name: {
             type: Sequilize.STRING,
             allowNull: false
@@ -26,6 +22,22 @@ module.exports = function (sequelize){
         },
         user_password: {
             type: Sequilize.STRING,
+            allowNull: false
+        },
+        country: {
+            type: Sequilize.STRING,
+            allowNull: false
+        },
+        language: {
+            type: Sequilize.STRING,
+            allowNull: false
+        },
+        gender: {
+            type: Sequilize.STRING,
+            allowNull: false
+        },
+        avatar: {
+            type: Sequilize.BLOB('long'),
             allowNull: false
         },
     },{
