@@ -1,5 +1,5 @@
 module.exports = () => {
-    const TOKEN_LENGTH = 20;
+    const TOKEN_LENGTH = 50;
     const ALPHA_UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const ALPHA_LOWER = 'abcdefghijklmnopqrstuvwxyz';
     const ALPHA = ALPHA_UPPER + ALPHA_LOWER;
