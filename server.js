@@ -1,8 +1,10 @@
 const express = require('express');
 const cookieParser = require('cookie-parser')
+const fs = require('fs')
 
 const kachPassword = require('./src/modules/kashPassword')
 const cacheCreator = require('./src/modules/cacheCreator')
+
 
 const db = require('./db');
 const Users = db.users;
@@ -31,10 +33,40 @@ let server = app.listen(4000, (req, res) =>{
         let port = server.address().port
         console.log("Сервер рабтает по адрессу http://%s:%s", host, port)
 })
-app.post('/foto',async (req, res) => {
-    console.log(req.body)
-    res.send('fotochka')
+
+
+
+app.post('/verificationName',async (req, res) => {
+    const verificationName =
+        await Users.findOne({
+            where: {
+                'user_name': req.body.name
+            },
+        } )
+            .then(token => token)
+            .then(bool => bool);
+    if(verificationName) res.send(false)
+    else res.send(true)
+
 })
+
+
+
+app.post('/verificationEmail',async (req, res) => {
+    const verificationEmail =
+        await Users.findOne({
+            where: {
+                'user_email': req.body.email
+            },
+        } )
+            .then(token => token)
+            .then(bool => bool);
+    if(verificationEmail) res.send(false)
+    else res.send(true)
+})
+
+
+
 app.post('/auth',async (req, res) =>{
     let body = req.body
     const loginAuth =
@@ -44,7 +76,7 @@ app.post('/auth',async (req, res) =>{
                 'user_password': kachPassword(body.email, body.password)
             },
         } )
-            .then(token => token !== null)
+            .then(token => token)
             .then(isLoginAuth => isLoginAuth);
 
     if(loginAuth) {
@@ -64,19 +96,25 @@ app.post('/auth',async (req, res) =>{
    })
 
 
+app.post('/registration', async  (req, res) =>{
+    let data = req.body
 
-app.post('/registration', (req, res) =>{
-    let body = req.body
-console.log(body)
-      Users.create({
-        'file_name': body.image_name,
-        'user_name': body.name,
-        'user_email': body.email,
-        'user_password': kachPassword(body.email, body.password),
-        'avatar': body.image,
-        'country': body.country,
-        'language': body.language,
-        'gender': body.gender
+ console.log(data)
+
+//    let pic = new Uint8Array(data);
+//     let blob = new Blob([pic]);
+// console.log(pic)
+
+
+     await Users.create({
+        'file_name': 'body.image_name',
+        'user_name': 'body.name',
+        'user_email': 'body.email',
+        'user_password': 'kachPassword(body.email, body.password)',
+        'avatar': data,
+        'country': 'body.country',
+        'language':' body.language',
+        'gender': 'body.gender'
 
     })
 
