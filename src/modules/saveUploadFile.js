@@ -5,8 +5,8 @@ const fs = require('fs');
 module.exports = (req, res)=>{
 
     let fileName = path.basename(req.url);
-    let file = path.join(__dirname, '../../uploads', fileName);
-    let imageFolder = path.join(__dirname, '../user_avatar', fileName)
+    let file = path.join(__dirname, './static/upload', fileName);
+    let imageFolder = path.join(__dirname, './static/', fileName)
   
     req.pipe(fs.createWriteStream(file));
     req.on('end', ()=>{

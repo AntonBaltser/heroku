@@ -37,7 +37,7 @@ module.exports = function (sequelize){
             allowNull: false
         },
         avatar: {
-            type: Sequilize.BLOB,
+            type: Sequilize.BLOB('long'),
             allowNull: false
         },
     },{
