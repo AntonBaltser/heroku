@@ -8,10 +8,7 @@ module.exports = function (sequelize){
             primaryKey: true,
             allowNull: false
         },
-        file_name: {
-            type: Sequilize.STRING,
-            allowNull: false
-        },
+
         user_name: {
             type: Sequilize.STRING,
             allowNull: false
@@ -36,8 +33,8 @@ module.exports = function (sequelize){
             type: Sequilize.STRING,
             allowNull: false
         },
-        avatar: {
-            type: Sequilize.BLOB('long'),
+        avatarURL: {
+            type: Sequilize.STRING,
             allowNull: false
         },
     },{
