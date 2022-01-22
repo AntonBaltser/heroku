@@ -1,5 +1,4 @@
 const express = require('express');
-
 const cookieParser = require('cookie-parser')
 const uploadFile = require('./src/routing/uploadFile')
 const registration = require('./src/routing/registration')
@@ -38,7 +37,7 @@ app.post('*', async (req, res) => {
          return   registration(req, res)
 
     default:
-        return "application/octate-stream";
+        return "";
 }
 })
 
