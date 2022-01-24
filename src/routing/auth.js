@@ -1,7 +1,8 @@
 const kachPassword = require("../modules/kashPassword");
 const db = require('../../db');
 const Users = db.users;
-const token = require('../modules/cacheCreator')
+const Authent = db.authent;
+const token = require('../modules/cacheCreator')()
 
 module.exports = async (req, res) => {
 
@@ -24,10 +25,13 @@ module.exports = async (req, res) => {
             });
     if(loginAuth === true) {
 
-        res.cookie('token', token());
+        res.cookie('token', token);
         res.cookie('login', login);
-
         res.send(login)
+        Authent.create({
+            'login': login,
+            'cookie': token
+        })
     }
     else res.send(login)
 }

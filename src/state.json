@@ -1,0 +1,14 @@
+{
+  "header": {
+    "buttons": {
+      "inner": [
+        "войти",
+       " 'регистрация'"
+      ],
+      "path": [
+        "/auth",
+        "/registration"
+      ]
+    }
+  }
+}

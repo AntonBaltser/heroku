@@ -7,6 +7,7 @@
     "mysql2": "^2.3.3",
     "randomstring": "^1.2.1",
     "sequelize": "^6.13.0"
+
   },
   "scripts": {
     "start": "node server.js"
@@ -20,7 +21,7 @@
     "url": "git+https://github.com/AntonBaltser/server_node.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "AntonBaltser",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AntonBaltser/server_node/issues"

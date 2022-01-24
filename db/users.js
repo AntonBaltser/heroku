@@ -8,7 +8,6 @@ module.exports = function (sequelize){
             primaryKey: true,
             allowNull: false
         },
-
         user_name: {
             type: Sequilize.STRING,
             allowNull: false
@@ -41,5 +40,4 @@ module.exports = function (sequelize){
         timestamps: false,
         tableName: 'users'
     });
-
 }

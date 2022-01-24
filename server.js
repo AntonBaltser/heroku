@@ -4,13 +4,14 @@ const uploadFile = require('./src/routing/uploadFile')
 const registration = require('./src/routing/registration')
 const auth = require('./src/routing/auth')
 const verification = require('./src/modules/plugins/verification')
+const fs = require('fs')
 let app = express();
 app.use(cookieParser())
 app.use(express.json());
 app.use(express.urlencoded());
 
 const setHeaders = require('./src/routing/setHeders')
-app.all('/*', (req, res, next) => {
+app.all('*', (req, res, next) => {
     setHeaders(req, res, next)
 });
 let server = app.listen(4000, (req, res) =>{
@@ -18,8 +19,13 @@ let server = app.listen(4000, (req, res) =>{
         let port = server.address().port
         console.log("Сервер рабтает по адрессу http://%s:%s", host, port)
 })
+app.get('/', (req, res) => {
+    const state = fs.readFileSync('./src/state.json')
+    console.dir(state)
+    res.send(state)
+})
 
-app.post('*', async (req, res) => {
+app.post('*',  (req, res) => {
      switch(req.url){
     case '/verificationName':
         return verification(req, res, {'user_name': req.body.name})

@@ -7,8 +7,9 @@ const sequelize = new Sequilize('project_VUE', 'antony', 'bp024W', {
 
 
 const users = require('./users')(sequelize);
-
+const authent = require('./authent')(sequelize);
 module.exports = {
     sequelize: sequelize,
     users: users,
+    authent: authent
 }
