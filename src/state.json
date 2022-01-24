@@ -1,14 +1,138 @@
 {
   "header": {
     "buttons": {
-      "inner": [
-        "войти",
-       " 'регистрация'"
-      ],
-      "path": [
-        "/auth",
-        "/registration"
-      ]
+      "login": {
+        "inner": "войти",
+        "to": "/auth",
+        "id": "regBtn",
+        "class": "btn btn-secondary",
+        "type": "button"
+      },
+      "logup": {
+        "inner": "регистрация",
+        "to": "/registration",
+        "id": "regBtn",
+        "class": "btn btn-secondary",
+        "type": "button"
+      }
+    },
+    "modal": {
+      "active": false,
+      "login": {
+        "active": false,
+        "label1": {
+          "inner": "Email address"
+        },
+        "input1": {
+          "id": "email",
+          "placeholder": "Enter email",
+          "Vmodel": "email",
+          "Change": "loginStore",
+          "class": "form-control",
+          "type": "email"
+        },
+        "small": {
+          "id": "emailHelp",
+          "class": "form-text text-muted",
+          "inner": "We'll never share your email with anyone else."
+        },
+        "label2": {
+          "for": "password",
+          "inner": "Password"
+        },
+        "input2": {
+          "id": "password",
+          "title": "Password",
+          "v-model": "email",
+          "@change": "loginStore",
+          "placeholder": "Password",
+          "class": "form-control",
+          "type": "password"
+        },
+        "button": {
+          "inner": "Войти",
+          "class": "btn btn-primary",
+          "type": "button"
+        }
+      },
+      "registration": {
+        "form1": {
+          "label": {
+            "for": "password",
+            "inner": "Email address"
+          },
+          "textAriaRule": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis delectus dicta eaque facere inventore magni, natus nostrum numquam, odio possimus quaerat quia quidem quis repellat, repudiandae tempora velit voluptatem!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis delectus dicta eaque facere inventore magni, natus nostrum numquam, odio possimus quaerat quia quidem quis repellat, repudiandae tempora velit voluptatem!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis delectus dicta eaque facere inventore magni, natus nostrum numquam, odio possimus quaerat quia quidem quis repellat, repudiandae tempora velit voluptatem!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis delectus dicta eaque facere inventore magni, natus nostrum numquam, odio possimus quaerat quia quidem quis repellat, repudiandae tempora velit voluptatem!",
+          "checkBox": {
+            "active": "false",
+            "class": ""
+          },
+          "button1": {
+            "inner": "Согласится",
+            "active": "false",
+            "class": ""
+          },
+          "Button2": {
+            "inner": "Отказаться",
+            "class": ""
+          }
+        },
+        "form2": {
+          "input1": {
+            "title": "Ваше имя на сайте",
+            "placeholder": "Enter your name",
+            "nameHelp": "Name can only contain uppercase and lowercase letters .",
+            "class": ""
+          },
+          "input2": {
+            "title": "Email address",
+            "placeholder": "Password",
+            "nameHelp": "Name can only contain uppercase and lowercase letters .",
+            "class": ""
+          },
+          "input3": {
+            "title": "Password-2",
+            "placeholder": "Password-2",
+            "nameHelp": "Name can only contain uppercase and lowercase letters .",
+            "class": ""
+          }
+        },
+        "form3": {
+          "select1": {
+            "title": "родной язык",
+            "options": [
+              "россия",
+              "англия",
+              "германия"
+            ],
+            "class": ""
+          },
+          "select2": {
+            "title": "изучаемый язык язык",
+            "options": [
+              "россия",
+              "англия",
+              "германия"
+            ],
+            "class": ""
+          },
+          "inputRadio": {
+            "label": "Ввыберите пол:",
+            "inner": [
+              "Мужской",
+              "Женский"
+            ],
+            "value": [
+              "male",
+              "female"
+            ],
+            "class": ""
+          },
+          "button": {
+            "inner": "Зарегистрироваться",
+            "class": ""
+          }
+        }
+      }
     }
   }
 }
